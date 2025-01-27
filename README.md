@@ -13,6 +13,7 @@ Um sistema para gerir eventos (presenciais ou online), incluindo cadastro de eve
  * `Postman`: Postan Collection. [PostamnL folder](SQL/).
 ## Galeria
 * API LOOPBACK:
+  
 ![image](https://github.com/user-attachments/assets/216ae99d-a3a8-42a4-b434-ba89c20c25b4)
 * API EXPLORER:
 ![image](https://github.com/user-attachments/assets/669b9057-18db-4c9e-b1cd-6ce422b9447d)
