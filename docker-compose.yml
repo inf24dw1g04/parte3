@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: data
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+    ports:
+      - "3307:3306"
+    volumes:
+      - sql_data:/var/lib/mysql
+      - ./SQL/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - app_network
+
+  loopback:
+    build:
+      context: ./gestao_eventos
+      dockerfile: Dockerfile
+    container_name: loopback
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    networks:
+      - app_network
+
+
+  node:
+    image: node:18
+    container_name: app
+    working_dir: /usr/src/app
+    volumes:
+      - ./gestao_eventos_reactadmin:/usr/src/app
+    command: "sh -c 'npm install && npm start'"
+    ports:
+      - "3001:3001"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      loopback:
+        condition: service_started
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+volumes:
+  sql_data: 

@@ -1,0 +1,3832 @@
+{
+	"info": {
+		"_postman_id": "6ff80145-63af-4577-a714-1f414a662643",
+		"name": "gestao_eventos",
+		"description": "M3 Api Gestão de Eventos\n\nContact Support:\n Name: Pedro Venda\n Email: pedro.venda27@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38485820"
+	},
+	"item": [
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Event Controller Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Event model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "tickets",
+							"item": [
+								{
+									"name": "Event Ticket Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/tickets",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"tickets"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Event model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/tickets",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"tickets"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Event Ticket Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/tickets?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"tickets"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Event.Ticket PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/tickets?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"tickets"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Event Ticket Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/tickets?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"tickets"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Event has many Ticket",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/tickets?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"tickets"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"type_ticket\": \"<string>\",\n    \"price\": \"<number>\",\n    \"eventId\": \"<number>\",\n    \"id\": \"<number>\"\n  },\n  {\n    \"type_ticket\": \"<string>\",\n    \"price\": \"<number>\",\n    \"eventId\": \"<number>\",\n    \"id\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Event Ticket Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/tickets?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												"tickets"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Event.Ticket DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/events/:id/tickets?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"events",
+														":id",
+														"tickets"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Event Controller Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Event model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\",\n  \"id\": \"<number>\",\n  \"tickets\": [\n    {\n      \"type_ticket\": \"<string>\",\n      \"price\": \"<number>\",\n      \"eventId\": \"<number>\",\n      \"id\": \"<number>\",\n      \"partricipants\": [\n        {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"status\": \"<string>\",\n          \"ticketId\": \"<number>\",\n          \"id\": \"<number>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"status\": \"<string>\",\n          \"ticketId\": \"<number>\",\n          \"id\": \"<number>\"\n        }\n      ]\n    },\n    {\n      \"type_ticket\": \"<string>\",\n      \"price\": \"<number>\",\n      \"eventId\": \"<number>\",\n      \"id\": \"<number>\",\n      \"partricipants\": [\n        {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"status\": \"<string>\",\n          \"ticketId\": \"<number>\",\n          \"id\": \"<number>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"email\": \"<string>\",\n          \"status\": \"<string>\",\n          \"ticketId\": \"<number>\",\n          \"id\": \"<number>\"\n        }\n      ]\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Event Controller Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Event DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Event Controller Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/events"
+					},
+					"response": [
+						{
+							"name": "Event model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/events"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Controller Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Event PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Event Controller Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/events?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Event model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"date\": \"<string>\",\n    \"time\": \"<string>\",\n    \"location\": \"<string>\",\n    \"organizerId\": \"<number>\",\n    \"id\": \"<number>\",\n    \"tickets\": [\n      {\n        \"type_ticket\": \"<string>\",\n        \"price\": \"<number>\",\n        \"eventId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"partricipants\": [\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          }\n        ]\n      },\n      {\n        \"type_ticket\": \"<string>\",\n        \"price\": \"<number>\",\n        \"eventId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"partricipants\": [\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"date\": \"<string>\",\n    \"time\": \"<string>\",\n    \"location\": \"<string>\",\n    \"organizerId\": \"<number>\",\n    \"id\": \"<number>\",\n    \"tickets\": [\n      {\n        \"type_ticket\": \"<string>\",\n        \"price\": \"<number>\",\n        \"eventId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"partricipants\": [\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          }\n        ]\n      },\n      {\n        \"type_ticket\": \"<string>\",\n        \"price\": \"<number>\",\n        \"eventId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"partricipants\": [\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"email\": \"<string>\",\n            \"status\": \"<string>\",\n            \"ticketId\": \"<number>\",\n            \"id\": \"<number>\"\n          }\n        ]\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "organizers",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Organizer Controller Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/organizers/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Organizer model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/organizers/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "events",
+							"item": [
+								{
+									"name": "Organizer Event Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id/events",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id",
+												"events"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Organizer model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/organizers/:id/events",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"organizers",
+														":id",
+														"events"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Organizer Event Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id/events?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id",
+												"events"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Organizer.Event PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"date\": \"<string>\",\n  \"time\": \"<string>\",\n  \"location\": \"<string>\",\n  \"organizerId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/organizers/:id/events?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"organizers",
+														":id",
+														"events"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Organizer Event Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id/events?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id",
+												"events"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Organizer has many Event",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/organizers/:id/events?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"organizers",
+														":id",
+														"events"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"date\": \"<string>\",\n    \"time\": \"<string>\",\n    \"location\": \"<string>\",\n    \"organizerId\": \"<number>\",\n    \"id\": \"<number>\"\n  },\n  {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"date\": \"<string>\",\n    \"time\": \"<string>\",\n    \"location\": \"<string>\",\n    \"organizerId\": \"<number>\",\n    \"id\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Organizer Event Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id/events?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id",
+												"events"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Organizer.Event DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/organizers/:id/events?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"organizers",
+														":id",
+														"events"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Organizer Controller Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/organizers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Organizer PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Organizer Controller Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/organizers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Organizer PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Organizer Controller Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/organizers/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Organizer model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"id\": \"<number>\",\n  \"events\": [\n    {\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"date\": \"<string>\",\n      \"time\": \"<string>\",\n      \"location\": \"<string>\",\n      \"organizerId\": \"<number>\",\n      \"id\": \"<number>\",\n      \"tickets\": [\n        {\n          \"type_ticket\": \"<string>\",\n          \"price\": \"<number>\",\n          \"eventId\": \"<number>\",\n          \"id\": \"<number>\",\n          \"partricipants\": [\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            }\n          ]\n        },\n        {\n          \"type_ticket\": \"<string>\",\n          \"price\": \"<number>\",\n          \"eventId\": \"<number>\",\n          \"id\": \"<number>\",\n          \"partricipants\": [\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"date\": \"<string>\",\n      \"time\": \"<string>\",\n      \"location\": \"<string>\",\n      \"organizerId\": \"<number>\",\n      \"id\": \"<number>\",\n      \"tickets\": [\n        {\n          \"type_ticket\": \"<string>\",\n          \"price\": \"<number>\",\n          \"eventId\": \"<number>\",\n          \"id\": \"<number>\",\n          \"partricipants\": [\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            }\n          ]\n        },\n        {\n          \"type_ticket\": \"<string>\",\n          \"price\": \"<number>\",\n          \"eventId\": \"<number>\",\n          \"id\": \"<number>\",\n          \"partricipants\": [\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"email\": \"<string>\",\n              \"status\": \"<string>\",\n              \"ticketId\": \"<number>\",\n              \"id\": \"<number>\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Organizer Controller Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/organizers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/organizers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"organizers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Organizer DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Organizer Controller Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/organizers"
+					},
+					"response": [
+						{
+							"name": "Organizer model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/organizers"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Organizer Controller Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/organizers?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"organizers"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Organizer PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/organizers?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Organizer Controller Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/organizers?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"organizers"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Organizer model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/organizers?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"organizers"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"id\": \"<number>\",\n    \"events\": [\n      {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"date\": \"<string>\",\n        \"time\": \"<string>\",\n        \"location\": \"<string>\",\n        \"organizerId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"tickets\": [\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          },\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"date\": \"<string>\",\n        \"time\": \"<string>\",\n        \"location\": \"<string>\",\n        \"organizerId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"tickets\": [\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          },\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"id\": \"<number>\",\n    \"events\": [\n      {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"date\": \"<string>\",\n        \"time\": \"<string>\",\n        \"location\": \"<string>\",\n        \"organizerId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"tickets\": [\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          },\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"title\": \"<string>\",\n        \"description\": \"<string>\",\n        \"date\": \"<string>\",\n        \"time\": \"<string>\",\n        \"location\": \"<string>\",\n        \"organizerId\": \"<number>\",\n        \"id\": \"<number>\",\n        \"tickets\": [\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          },\n          {\n            \"type_ticket\": \"<string>\",\n            \"price\": \"<number>\",\n            \"eventId\": \"<number>\",\n            \"id\": \"<number>\",\n            \"partricipants\": [\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"email\": \"<string>\",\n                \"status\": \"<string>\",\n                \"ticketId\": \"<number>\",\n                \"id\": \"<number>\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "partricipants",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Participant Controller Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/partricipants/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Partricipant model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/partricipants/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"partricipants",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Participant Controller Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/partricipants/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/partricipants/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"partricipants",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Partricipant PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Participant Controller Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/partricipants/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/partricipants/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"partricipants",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Partricipant PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Participant Controller Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/partricipants/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Partricipant model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/partricipants/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"partricipants",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Participant Controller Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/partricipants/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/partricipants/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"partricipants",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Partricipant DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Participant Controller Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/partricipants"
+					},
+					"response": [
+						{
+							"name": "Partricipant model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/partricipants"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Participant Controller Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/partricipants?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"partricipants"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Partricipant PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/partricipants?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Participant Controller Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/partricipants?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"partricipants"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Partricipant model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/partricipants?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"partricipants"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"ticketId\": \"<number>\",\n    \"id\": \"<number>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"ticketId\": \"<number>\",\n    \"id\": \"<number>\"\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"item": [
+				{
+					"name": "Ping Controller.ping",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{baseUrl}}/ping"
+					},
+					"response": [
+						{
+							"name": "Ping Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{baseUrl}}/ping"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"greeting\": \"<string>\",\n  \"date\": \"<string>\",\n  \"url\": \"<string>\",\n  \"headers\": {\n    \"Content-Type\": \"<string>\",\n    \"qui_96\": 76535928,\n    \"id51\": -44371010\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "count",
+					"item": [
+						{
+							"name": "Ticket Controller Controller.count",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tickets/count?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets",
+										"count"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Ticket model count",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tickets/count?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												"count"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"count\": \"<number>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "partricipants",
+							"item": [
+								{
+									"name": "Ticket Partricipant Controller.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id/partricipants",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id",
+												"partricipants"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Ticket model instance",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/tickets/:id/partricipants",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"tickets",
+														":id",
+														"partricipants"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Ticket Partricipant Controller.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id/partricipants?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id",
+												"partricipants"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Ticket.Partricipant PATCH success count",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<number>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": \"<string>\",\n  \"ticketId\": \"<number>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/tickets/:id/partricipants?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"tickets",
+														":id",
+														"partricipants"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Ticket Partricipant Controller.find",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id/partricipants?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id",
+												"partricipants"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Array of Ticket has many Partricipant",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/tickets/:id/partricipants?filter=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"tickets",
+														":id",
+														"partricipants"
+													],
+													"query": [
+														{
+															"key": "filter",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"ticketId\": \"<number>\",\n    \"id\": \"<number>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"status\": \"<string>\",\n    \"ticketId\": \"<number>\",\n    \"id\": \"<number>\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Ticket Partricipant Controller.delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id/partricipants?where=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id",
+												"partricipants"
+											],
+											"query": [
+												{
+													"key": "where",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<number>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Ticket.Partricipant DELETE success count",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/tickets/:id/partricipants?where=",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"tickets",
+														":id",
+														"partricipants"
+													],
+													"query": [
+														{
+															"key": "where",
+															"value": ""
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"count\": \"<number>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Ticket Controller Controller.replace By Id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tickets/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\",\n  \"id\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Ticket PUT success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Ticket Controller Controller.update By Id",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tickets/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Ticket PATCH success\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Ticket Controller Controller.find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tickets/:id?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets",
+										":id"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Ticket model instance",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id?filter=",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": ""
+												}
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\",\n  \"id\": \"<number>\",\n  \"partricipants\": [\n    {\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"status\": \"<string>\",\n      \"ticketId\": \"<number>\",\n      \"id\": \"<number>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"email\": \"<string>\",\n      \"status\": \"<string>\",\n      \"ticketId\": \"<number>\",\n      \"id\": \"<number>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Ticket Controller Controller.delete By Id",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tickets/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<number>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/tickets/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"tickets",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"description\": \"Ticket DELETE success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Ticket Controller Controller.create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/tickets"
+					},
+					"response": [
+						{
+							"name": "Ticket model instance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/tickets"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\",\n  \"id\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ticket Controller Controller.update All",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tickets?where=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ticket PATCH success count",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<number>\",\n  \"type_ticket\": \"<string>\",\n  \"price\": \"<number>\",\n  \"eventId\": \"<number>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tickets?where=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "where",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"count\": \"<number>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Ticket Controller Controller.find",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/tickets?filter=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tickets"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Array of Ticket model instances",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/tickets?filter=",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"type_ticket\": \"<string>\",\n    \"price\": \"<number>\",\n    \"eventId\": \"<number>\",\n    \"id\": \"<number>\",\n    \"partricipants\": [\n      {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"status\": \"<string>\",\n        \"ticketId\": \"<number>\",\n        \"id\": \"<number>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"status\": \"<string>\",\n        \"ticketId\": \"<number>\",\n        \"id\": \"<number>\"\n      }\n    ]\n  },\n  {\n    \"type_ticket\": \"<string>\",\n    \"price\": \"<number>\",\n    \"eventId\": \"<number>\",\n    \"id\": \"<number>\",\n    \"partricipants\": [\n      {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"status\": \"<string>\",\n        \"ticketId\": \"<number>\",\n        \"id\": \"<number>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"email\": \"<string>\",\n        \"status\": \"<string>\",\n        \"ticketId\": \"<number>\",\n        \"id\": \"<number>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		}
+	]
+}
